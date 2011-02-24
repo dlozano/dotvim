@@ -38,4 +38,6 @@ set visualbell
 au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
 
 set confirm
+let g:CSApprox_konsole=1
+set t_Co=256
 
