@@ -43,6 +43,7 @@ let g:CSApprox_konsole=1
 set t_Co=256
 set laststatus=2                                          " statusline setup
 if has('statusline')
+                                          
   set statusline=   " clear the statusline, allow for rearranging parts
   set statusline+=%f                "Path to the file, as typed or relative to current dir
   set statusline+=%#errormsg#        "change color
@@ -58,6 +59,9 @@ if has('statusline')
   set statusline+=\ %{fugitive#statusline()}  "show Git info, via fugitive.git
   "set statusline+=\ (%{synIDattr(synID(line('.'),col('.'),0),'name')}) "DEBUG : display the current syntax item name
   set statusline+=%#error#          "change color
+    set statusline+=%#warningmsg#
+    set statusline+=%{SyntasticStatuslineFlag()}
+    set statusline+=%*
   set statusline+=%{&paste?'[paste]':''}    "display a warning if &paste is set
   set statusline+=%*                "reset color to normal statusline color
   set statusline+=%=                "right-align following items
@@ -97,3 +101,8 @@ cmap w!! %!sudo tee > /dev/null %
 nmap <Leader>rci :%!ruby-code-indenter<cr>
 " Space will toggle folds! (maybe get rid of this?)
 nnoremap <space> za
+let g:syntastic_enable_signs=1
+let g:syntastic_auto_jump=1
+let g:syntastic_auto_loc_list=1
+let g:syntastic_auto_loc_list=2
+let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
