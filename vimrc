@@ -21,7 +21,16 @@ set showmatch           "mostra l'altra banda d'una clau o d'un parèntesis quan
 set completeopt=preview "opcions d'autocompletatge. Alternativa (vim 7): set completeopt=preview,menu
 set pastetoggle=<F10>   "defineixes la tecla d'enganxar (paste) al F10
 set diffopt=iwhite      "opcions per vimdiff: ignore white spaces
-colorscheme obsidian2  
+																																 
+"colorscheme obsidian2                        
+if $COLORTERM == 'gnome-terminal'
+  set term=gnome-256color
+  colorscheme  railscasts
+else
+  colorscheme railscasts
+endif                           
+                           
+
 :filetype plugin on
 set mouse=a
 set incsearch
