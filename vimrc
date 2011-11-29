@@ -21,16 +21,13 @@ set showmatch           "mostra l'altra banda d'una clau o d'un parèntesis quan
 set completeopt=preview "opcions d'autocompletatge. Alternativa (vim 7): set completeopt=preview,menu
 set pastetoggle=<F10>   "defineixes la tecla d'enganxar (paste) al F10
 set diffopt=iwhite      "opcions per vimdiff: ignore white spaces
-																																 
-"colorscheme obsidian2                        
-if $COLORTERM == 'gnome-terminal'
-  set term=gnome-256color
-  colorscheme  railscasts
-else
-  colorscheme railscasts
-endif                           
-                           
-
+colorscheme obsidian2
+  if $COLORTERM == 'gnome-terminal'
+    set term=gnome-256color
+    colorscheme railscasts
+  else
+    colorscheme default
+  end
 :filetype plugin on
 set mouse=a
 set incsearch
@@ -94,10 +91,12 @@ set showfulltag               " show full completion tags
 set diffopt=filler        " insert filler to make lines match up
 set diffopt+=iwhite       " ignore all whitespace
 set diffopt+=vertical     " make :diffsplit default to vertical
+"folding settings
 augroup vimrc
   au BufReadPre * setlocal foldmethod=indent
   au BufWinEnter * if &fdm == 'indent' | setlocal foldmethod=manual | endif
 augroup END
+set nofoldenable
 " open all folds
 nmap <LocalLeader>fo  :%foldopen!<cr>
 " close all folds
@@ -116,8 +115,6 @@ let g:syntastic_auto_loc_list=1
 let g:syntastic_auto_loc_list=2
 let g:syntastic_stl_format = '[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]'
 
-set foldlevelstart=99 
-
 fun! <SID>StripTrailingWhitespaces()
     let l = line(".")
     let c = col(".")
@@ -126,3 +123,34 @@ fun! <SID>StripTrailingWhitespaces()
 endfun
 
 autocmd BufWritePre *.rb :call <SID>StripTrailingWhitespaces()
+
+set guifont="Monospace\ Regular\ 9"
+
+" Mode Indication -Prominent!
+function! InsertStatuslineColor(mode)
+  if a:mode == 'i'
+    hi statusline guibg=red
+    set cursorcolumn
+  elseif a:mode == 'r'
+    hi statusline guibg=blue
+  else
+    hi statusline guibg=white
+  endif
+endfunction
+
+function! InsertLeaveActions()
+  hi statusline guibg=darkgreen
+  set nocursorcolumn
+endfunction
+
+au InsertEnter * call InsertStatuslineColor(v:insertmode)
+au InsertLeave * call InsertLeaveActions()
+
+" to handle exiting insert mode via a control-C
+inoremap <c-c> <c-o>:call InsertLeaveActions()<cr><c-c>
+
+" default the statusline to green when entering Vim
+hi statusline guibg=darkgreen
+
+" have a permanent statusline to color
+set laststatus=2
