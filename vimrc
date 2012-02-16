@@ -5,6 +5,8 @@ syntax on               "activa els colors, etcètera
 set number              "mostra els números de línia a la part esquerra de la pantalla
 set ruler               "mostra la línia en que ens trobem i la posició dins d'aquesta
 set showmode            "ens mostra si estem en mode edició, substitució o cap
+
+
 set hlsearch            "ressalta el text buscat
 set autoindent          "opcions d'indentació
 set cindent             "opcions d'indentació
@@ -111,6 +113,9 @@ cmap w!! %!sudo tee > /dev/null %
 nmap <Leader>rci :%!ruby-code-indenter<cr>
 " Space will toggle folds! (maybe get rid of this?)
 nnoremap <space> za
+
+
+
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_jump=1
 let g:syntastic_auto_loc_list=1
@@ -125,6 +130,7 @@ fun! <SID>StripTrailingWhitespaces()
 endfun
 
 autocmd BufWritePre *.rb :call <SID>StripTrailingWhitespaces()
+
 
 set guifont="Monospace\ Regular\ 9"
 
@@ -156,3 +162,12 @@ hi statusline guibg=darkgreen
 
 " have a permanent statusline to color
 set laststatus=2
+
+
+
+let g:changes_autocmd=1
+let g:changes_vcs_check=1
+let g:changes_vcs_system='git'
+let g:changes_verbose=0
+
+

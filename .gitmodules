@@ -91,4 +91,3 @@
 [submodule "bundle/changes"]
 	path = bundle/changes
 	url = git://github.com/chrisbra/changesPlugin.git
-
