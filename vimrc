@@ -21,13 +21,15 @@ set showmatch           "mostra l'altra banda d'una clau o d'un parèntesis quan
 set completeopt=preview "opcions d'autocompletatge. Alternativa (vim 7): set completeopt=preview,menu
 set pastetoggle=<F10>   "defineixes la tecla d'enganxar (paste) al F10
 set diffopt=iwhite      "opcions per vimdiff: ignore white spaces
+
 colorscheme obsidian2
-  if $COLORTERM == 'gnome-terminal'
-    set term=gnome-256color
-    colorscheme railscasts
-  else
-    colorscheme default
-  end
+if $COLORTERM == 'gnome-terminal'
+  set term=gnome-256color
+  colorscheme  railscasts
+else
+  colorscheme railscasts
+endif
+
 :filetype plugin on
 set mouse=a
 set incsearch
@@ -37,10 +39,10 @@ set history=1000
 set wildmode=list:longest
 set title
 set smartcase
-set backup             
+set backup
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
-au! BufRead,BufNewFile *.json setfiletype json 
+au! BufRead,BufNewFile *.json setfiletype json
 set visualbell
 au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
 
@@ -49,7 +51,7 @@ let g:CSApprox_konsole=1
 set t_Co=256
 set laststatus=2                                          " statusline setup
 if has('statusline')
-                                          
+
   set statusline=   " clear the statusline, allow for rearranging parts
   set statusline+=%f                "Path to the file, as typed or relative to current dir
   set statusline+=%#errormsg#        "change color

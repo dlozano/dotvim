@@ -1,7 +1,7 @@
 [submodule "bundle/vim-rails"]
 	path = bundle/vim-rails
 	url = git://github.com/tpope/vim-rails.git
-  ignore = untrackedignore = untracked
+  ignore = untracked
 [submodule "bundle/nerdtree"]
 	path = bundle/nerdtree
 	url = git://github.com/scrooloose/nerdtree.git
@@ -9,47 +9,47 @@
 [submodule "bundle/snipmate"]
 	path = bundle/snipmate
 	url = git://github.com/msanders/snipmate.vim.git
-  ignore = untracked  
+  ignore = untracked
 [submodule "bundle/sunburst"]
 	path = bundle/sunburst
 	url = git://github.com/gigamo/sunburst.vim.git
-  ignore = untracked  
+  ignore = untracked
 [submodule "bundle/vim-mac-classic-theme"]
 	path = bundle/vim-mac-classic-theme
 	url = git://github.com/nelstrom/vim-mac-classic-theme.git
-  ignore = untracked  
+  ignore = untracked
 [submodule "bundle/xoria256"]
 	path = bundle/xoria256
 	url = git://github.com/vim-scripts/xoria256.vim.git
-  ignore = untracked  
+  ignore = untracked
 [submodule "bundle/vim-vividchalk"]
 	path = bundle/vim-vividchalk
 	url = git://github.com/tpope/vim-vividchalk.git
-  ignore = untracked  
+  ignore = untracked
 [submodule "bundle/nerdcommenter"]
 	path = bundle/nerdcommenter
 	url = git://github.com/scrooloose/nerdcommenter.git
-  ignore = untracked  
+  ignore = untracked
 [submodule "bundle/vim-haml"]
 	path = bundle/vim-haml
 	url = git://github.com/tpope/vim-haml.git
-  ignore = untracked  
+  ignore = untracked
 [submodule "bundle/vim-surround"]
 	path = bundle/vim-surround
 	url = git://github.com/tpope/vim-surround.git
-  ignore = untracked  
+  ignore = untracked
 [submodule "bundle/grails"]
 	path = bundle/grails
 	url = git://github.com/dlozano/grails-vim.git
-  ignore = untracked  
+  ignore = untracked
 [submodule "bundle/csapprox"]
 	path = bundle/csapprox
 	url = git://github.com/godlygeek/csapprox.git
-  ignore = untracked  
+  ignore = untracked
 [submodule "bundle/yankring"]
 	path = bundle/yankring
 	url = git://github.com/vim-scripts/YankRing.vim.git
-  ignore = untracked  
+  ignore = untracked
 [submodule "bundle/fugitive"]
 	path = bundle/fugitive
 	url = git://github.com/tpope/vim-fugitive.git
@@ -88,3 +88,7 @@
 [submodule "bundle/gundo"]
 	path = bundle/gundo
 	url = git://github.com/sjl/gundo.vim.git
+[submodule "bundle/changes"]
+	path = bundle/changes
+	url = git://github.com/chrisbra/changesPlugin.git
+
