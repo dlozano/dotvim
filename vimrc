@@ -170,4 +170,5 @@ let g:changes_vcs_check=1
 let g:changes_vcs_system='git'
 let g:changes_verbose=0
 
-
+nnoremap <silent> <Leader>t :CommandT<CR>
+nnoremap <silent> <Leader>b :CommandTBuffer<CR>
