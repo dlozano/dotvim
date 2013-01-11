@@ -172,6 +172,9 @@ let g:changes_verbose=0
 
 nnoremap <silent> <Leader>t :CommandT<CR>
 nnoremap <silent> <Leader>b :CommandTBuffer<CR>
+set wildignore=*.o,*.obj,.git,.hg,public/images,public/media,doc,vendor/cache
+let g:CommandTMaxFiles=50000
+
 
 "save with ctrl-s
 " If the current buffer has never been saved, it will have no name,
