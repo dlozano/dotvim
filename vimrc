@@ -172,3 +172,10 @@ let g:changes_verbose=0
 
 nnoremap <silent> <Leader>t :CommandT<CR>
 nnoremap <silent> <Leader>b :CommandTBuffer<CR>
+
+"save with ctrl-s
+" If the current buffer has never been saved, it will have no name,
+" call the file browser to save it, otherwise just save it.
+nnoremap <silent> <C-S> :if expand("%") == ""<CR>browse confirm w<CR>else<CR>confirm w<CR>endif<CR>
+imap <c-s> <c-o><c-s>
+nnoremap <silent> <c-t> :tabnew<CR>
