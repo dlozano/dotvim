@@ -182,3 +182,7 @@ let g:CommandTMaxFiles=50000
 nnoremap <silent> <C-S> :if expand("%") == ""<CR>browse confirm w<CR>else<CR>confirm w<CR>endif<CR>
 imap <c-s> <c-o><c-s>
 nnoremap <silent> <c-t> :tabnew<CR>
+
+
+set list
+set listchars=tab:▸\ ,trail:▝
