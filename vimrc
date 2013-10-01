@@ -102,6 +102,22 @@ set showfulltag               " show full completion tags
 set diffopt=filler        " insert filler to make lines match up
 set diffopt+=iwhite       " ignore all whitespace
 set diffopt+=vertical     " make :diffsplit default to vertical
+
+augroup vimrcEx
+  au!
+
+  " For all text files set 'textwidth' to 78 characters.
+  autocmd FileType text setlocal textwidth=78
+
+  " When editing a file, always jump to the last known cursor position.
+  " Don't do it when the position is invalid or when inside an event handler
+  " (happens when dropping a file on gvim).
+  autocmd BufReadPost *
+    \ if line("'\"") > 0 && line("'\"") <= line("$") |
+    \   exe "normal g`\"" |
+    \ endif
+augroup END
+
 "folding settings
 augroup vimrc
   au BufReadPre * setlocal foldmethod=indent
