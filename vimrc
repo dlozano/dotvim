@@ -129,15 +129,13 @@ nmap <LocalLeader>fo  :%foldopen!<cr>
 " close all folds
 nmap <LocalLeader>fc  :%foldclose!<cr>
 " ,nn will toggle NERDTree on and off
+
+
 nmap <LocalLeader>nn :NERDTreeToggle<cr>
 " If I forgot to sudo vim a file, do that with :w!!
 cmap w!! %!sudo tee > /dev/null %
 " use \rci to indent ruby cody with ruby-code-indenter
 nmap <Leader>rci :%!ruby-code-indenter<cr>
-" Space will toggle folds! (maybe get rid of this?)
-nnoremap <space> za
-
-
 
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_jump=1
