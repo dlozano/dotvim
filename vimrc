@@ -225,3 +225,6 @@ endif
 let g:html_indent_tags = 'li\|p'
 
 
+
+:imap <C-BS> <C-W>
+
