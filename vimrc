@@ -186,7 +186,7 @@ set laststatus=2
 
 
 
-let g:changes_autocmd=1
+let g:changes_autocmd=0
 let g:changes_vcs_check=1
 let g:changes_vcs_system='git'
 let g:changes_verbose=0
