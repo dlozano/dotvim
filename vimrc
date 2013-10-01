@@ -48,9 +48,9 @@ set history=1000
 set wildmode=list:longest
 set title
 set smartcase
-set backup
-set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
-set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set nobackup
+set nowritebackup
+set noswapfile    " http://robots.thoughtbot.com/post/18739402579/global-gitignore#comment-458413287
 au! BufRead,BufNewFile *.json setfiletype json
 set visualbell
 au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
