@@ -207,3 +207,10 @@ nnoremap <silent> <c-t> :tabnew<CR>
 
 set list
 set listchars=tab:▸\ ,trail:▝
+
+
+" Local config
+if filereadable(".vimrc.local")
+  source .vimrc.local
+endif
+
