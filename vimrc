@@ -1,8 +1,15 @@
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
-syntax on               "activa els colors, etcètera
+
+" Switch syntax highlighting on, when the terminal has colors
+" Also switch on highlighting the last used search pattern.
+if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
+  syntax on
+endif
 set number              "mostra els números de línia a la part esquerra de la pantalla
+set numberwidth=5
+
 set ruler               "mostra la línia en que ens trobem i la posició dins d'aquesta
 set showmode            "ens mostra si estem en mode edició, substitució o cap
 
