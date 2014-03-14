@@ -102,7 +102,7 @@ set showfulltag               " show full completion tags
 set diffopt=filler        " insert filler to make lines match up
 set diffopt+=iwhite       " ignore all whitespace
 set diffopt+=vertical     " make :diffsplit default to vertical
-
+"set autochdir
 augroup vimrcEx
   au!
 
@@ -191,11 +191,28 @@ let g:changes_vcs_check=1
 let g:changes_vcs_system='git'
 let g:changes_verbose=0
 
-nnoremap <silent> <Leader>t :CommandT<CR>
-nnoremap <silent> <Leader>b :CommandTBuffer<CR>
-set wildignore=*.o,*.obj,.git,.hg,public/images,public/media,doc,vendor/cache
-let g:CommandTMaxFiles=50000
+"nnoremap <silent> <Leader>t :CommandT<CR>
+"nnoremap <silent> <Leader>b :CommandTBuffer<CR>
+"let g:CommandTMaxFiles=50000
 
+set wildignore=*.o,*.obj,.git,.hg,public/images,public/media,vendor/cache
+nnoremap <silent> <Leader>t :CtrlP<CR>
+nnoremap <silent> <Leader>b :CtrlPBuffer<CR>
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn|bundle)$',
+  \ }
+let g:ctrlp_working_path_mode='ra'
+let g:ctrlp_max_files=0
+let g:ctrlp_prompt_mappings = {
+    \ 'AcceptSelection("e")': ['<c-t>'],
+    \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
+    \ }
+let g:nerdtree_tabs_open_on_console_startup=1
+let g:nerdtree_tabs_open_on_gui_startup=1
+let g:nerdtree_tabs_focus_on_files=1
+
+nnoremap <F4> :NERDTreeTabsToggle<CR>
+map <Leader>n :NERDTreeTabsToggle<CR>
 
 "save with ctrl-s
 " If the current buffer has never been saved, it will have no name,
