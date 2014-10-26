@@ -1,6 +1,35 @@
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
+" Of course
+set nocompatible
 
+" Required Vundle setup
+filetype off
+set runtimepath+=~/.vim/bundle/vundle
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+Bundle 'vim-scripts/AutoComplPop'
+Bundle 'chrisbra/changesPlugin'
+Bundle 'godlygeek/csapprox'
+Bundle 'bogado/file-line'
+Bundle 'tpope/vim-fugitive'
+Bundle 'vim-scripts/FuzzyFinder'
+Bundle 'dlozano/grails-vim'
+Bundle 'sjl/gundo.vim'
+Bundle 'vim-scripts/L9'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'scrooloose/nerdtree'
+Bundle 'msanders/snipmate.vim'
+Bundle 'gigamo/sunburst.vim'
+Bundle 'ervandew/supertab'
+Bundle 'scrooloose/syntastic'
+Bundle 'tpope/vim-haml'
+Bundle 'itspriddle/vim-jquery'
+Bundle 'leshill/vim-json'
+Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-vividchalk'
+Bundle 'vim-scripts/xoria256.vim'
+Bundle 'vim-scripts/YankRing.vim'
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
