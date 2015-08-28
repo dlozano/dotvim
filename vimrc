@@ -1,12 +1,11 @@
 " Of course
 set nocompatible
 filetype off
-
+set shell=/bin/bash
 set rtp +=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'gmarik/vundle'
-Plugin 'vim-scripts/AutoComplPop'
 Plugin 'chrisbra/changesPlugin'
 Plugin 'godlygeek/csapprox'
 Plugin 'bogado/file-line'
@@ -19,7 +18,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'msanders/snipmate.vim'
 Plugin 'gigamo/sunburst.vim'
 Plugin 'ervandew/supertab'
-Plugin 'scrooloose/syntastic'
+"Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-haml'
 Plugin 'itspriddle/vim-jquery'
 Plugin 'leshill/vim-json'
@@ -28,6 +27,11 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-vividchalk'
 Plugin 'vim-scripts/xoria256.vim'
 Plugin 'vim-scripts/YankRing.vim'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'kien/ctrlp.vim'
+Plugin 'godlygeek/tabular'
+Plugin 'bling/vim-airline'
+Plugin 'elixir-lang/vim-elixir'
 
 "All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -58,7 +62,7 @@ set expandtab
 set bg=dark
 set nowrap              "d'aquesta manera no talla les línies al final de pantalla
 set showmatch           "mostra l'altra banda d'una clau o d'un parèntesis quan ens situem al damunt
-set completeopt=preview "opcions d'autocompletatge. Alternativa (vim 7): set completeopt=preview,menu
+"set completeopt=preview "opcions d'autocompletatge. Alternativa (vim 7): set completeopt=preview,menu
 set pastetoggle=<F10>   "defineixes la tecla d'enganxar (paste) al F10
 set diffopt=iwhite      "opcions per vimdiff: ignore white spaces
 
@@ -222,10 +226,9 @@ let g:changes_vcs_check=1
 let g:changes_vcs_system='git'
 let g:changes_verbose=0
 
-nnoremap <silent> <Leader>t :CommandT<CR>
-nnoremap <silent> <Leader>b :CommandTBuffer<CR>
+nnoremap <silent> <Leader>t :CtrlP<CR>
+nnoremap <silent> <Leader>b :CtrlPBuffer<CR>
 set wildignore=*.o,*.obj,.git,.hg,public/images,public/media,doc,vendor/cache
-let g:CommandTMaxFiles=50000
 
 
 "save with ctrl-s
@@ -234,6 +237,7 @@ let g:CommandTMaxFiles=50000
 nnoremap <silent> <C-S> :if expand("%") == ""<CR>browse confirm w<CR>else<CR>confirm w<CR>endif<CR>
 imap <c-s> <c-o><c-s>
 nnoremap <silent> <c-t> :tabnew<CR>
+imap <F3> binding.pry
 
 
 set list
@@ -259,3 +263,5 @@ let g:html_indent_tags = 'li\|p'
 
 :imap <C-BS> <C-W>
 
+au BufEnter *.rb syn match error contained "\<binding.pry\>"
+au BufEnter *.rb syn match error contained "\<debugger\>"
