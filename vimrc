@@ -32,6 +32,8 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'bling/vim-airline'
 Plugin 'elixir-lang/vim-elixir'
+Plugin 'mileszs/ack.vim'
+Plugin 'jimenezrick/vimerl'
 
 "All of your Plugins must be added before the following line
 call vundle#end()            " required
